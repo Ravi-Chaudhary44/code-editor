@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Code Editor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Code Editor</h1>
+    <button id="run-btn">▶ Run</button>
+  </header>
+
+  <div class="editor-tabs">
+    <button class="tab-btn active" data-tab="html">HTML</button>
+    <button class="tab-btn" data-tab="css">CSS</button>
+    <button class="tab-btn" data-tab="js">JavaScript</button>
+  </div>
+
+  <main>
+    <div class="editor-container">
+      <textarea id="html-editor" class="code-editor" spellcheck="false">
+<!DOCTYPE html>
+<html>
+<head><title>My Page</title></head>
+<body>
+  <h1>Hello World!</h1>
+  <p>Welcome to my webpage.</p>
+</body>
+</html>
+      </textarea>
+
+      <textarea id="css-editor" class="code-editor" spellcheck="false" style="display: none;">
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+h1 {
+  color: #3498db;
+}
+      </textarea>
+
+      <textarea id="js-editor" class="code-editor" spellcheck="false" style="display: none;">
+document.querySelector('h1').onclick = function () {
+  this.style.color = '#' + Math.floor(Math.random()*16777215).toString(16);
+};
+      </textarea>
+    </div>
+    <div class="preview-section">
+      <h2>Preview</h2>
+      <iframe id="preview"></iframe>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
